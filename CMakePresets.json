@@ -1,5 +1,14 @@
 {
   "version": 4,
+  "buildPresets": [
+    { "name": "x64-linux-cpu-debug", "configurePreset": "x64-linux-cpu-debug" },
+    { "name": "x64-linux-cpu-release", "configurePreset": "x64-linux-cpu-release" },
+    { "name": "x64-linux-cpu-reldbg", "configurePreset": "x64-linux-cpu-reldbg" },
+    { "name": "x64-linux-cpu-release-static", "configurePreset": "x64-linux-cpu-release-static" },
+
+    { "name": "x64-linux-vulkan-debug", "configurePreset": "x64-linux-vulkan-debug" },
+    { "name": "x64-linux-vulkan-release", "configurePreset": "x64-linux-vulkan-release" }
+  ],
   "configurePresets": [
     {
         "name":  "base",
@@ -62,10 +71,13 @@
             "CMAKE_CXX_COMPILER": "g++"
         }
     },
-    { "name": "x64-linux-gcc-debug", "inherits": [ "base", "x64-linux-gcc", "debug" ] },
-    { "name": "x64-linux-gcc-release", "inherits": [ "base", "x64-linux-gcc", "release" ] },
-    { "name": "x64-linux-gcc-reldbg", "inherits": [ "base", "x64-linux-gcc", "reldbg" ] },
-    { "name": "x64-linux-gcc+static-release", "inherits": [ "base", "x64-linux-gcc", "release", "static" ] },
+    { "name": "x64-linux-cpu-debug", "inherits": [ "base", "x64-linux-gcc", "debug" ] },
+    { "name": "x64-linux-cpu-release", "inherits": [ "base", "x64-linux-gcc", "release" ] },
+    { "name": "x64-linux-cpu-reldbg", "inherits": [ "base", "x64-linux-gcc", "reldbg" ] },
+    { "name": "x64-linux-cpu-release-static", "inherits": [ "base", "x64-linux-gcc", "release", "static" ] },
+
+    { "name": "x64-linux-vulkan-debug", "inherits": [ "base", "x64-linux-gcc", "vulkan", "debug" ] },
+    { "name": "x64-linux-vulkan-release", "inherits": [ "base", "x64-linux-gcc", "vulkan", "release" ] },
 
     { "name": "arm64-windows-llvm-debug", "inherits": [ "base", "arm64-windows-llvm", "debug" ] },
     { "name": "arm64-windows-llvm-release", "inherits": [ "base", "arm64-windows-llvm", "reldbg" ] },
